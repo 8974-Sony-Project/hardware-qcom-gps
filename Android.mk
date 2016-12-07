@@ -23,7 +23,7 @@ ifneq ($(TARGET_BOARD_AUTO),true)
       else ifneq ($(filter msmcobalt ,$(TARGET_BOARD_PLATFORM)),)
         #For msmcobalt target
         include $(call all-named-subdir-makefiles,msmcobalt)
-      else ifeq ($(filter msm8916,$(TARGET_BOARD_PLATFORM)),)
+      else
         #For all other targets
         GPS_DIRS=core utils loc_api platform_lib_abstractions etc
         include $(call all-named-subdir-makefiles,$(GPS_DIRS))
@@ -34,7 +34,7 @@ ifneq ($(TARGET_BOARD_AUTO),true)
         #For msm8909 target
         GPS_DIRS=msm8909/core msm8909/utils msm8909/loc_api msm8909/etc
         include $(call all-named-subdir-makefiles,$(GPS_DIRS))
-      else ifeq ($(filter msm8916 ,$(TARGET_BOARD_PLATFORM)),)
+      else
         GPS_DIRS=core utils loc_api platform_lib_abstractions etc
         include $(call all-named-subdir-makefiles,$(GPS_DIRS))
       endif
